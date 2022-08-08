@@ -1,27 +1,29 @@
-const mongoose= require('mongoose');
-const Schema= mongoose.Schema;
+const {Schema,model} = require('mongoose');
 
-const caja= new Schema({
-    estado:{ 
-        type: Boolean,
-        default:true
+const cajaSchema = new Schema({
+
+    Fecha: {
+        type: String
     },
-    Fecha:{type:String},
-    Nombre:String,
+    Nombre: String,
+    Detalle: String,
+    Monto: {
+        type: Number,
+        default: 0
+    },
+    orden: {
+        type: Number,
+        required: [true, "Necesito numero de orden"]
+    },
+    estado: {
+        type: Boolean,
+        default: true
+    },
 
-    Detalle:String,
-    Monto:{type:Number,default: 0},  
-    Option:{type:String},
-    Balance:String,
-    orden:{
-        type:Number,
-        required:[true,"Necesito numero de orden"]
-    }   
-
-    
-   
-})  
 
 
-const Caja= mongoose.model("Caja",caja)
-module.exports=Caja
+})
+
+
+const Caja = model("Caja", cajaSchema)     
+module.exports = Caja
