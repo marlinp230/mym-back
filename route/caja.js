@@ -4,14 +4,11 @@ const Caja = require('../models/caja')
 
 router.get('/', async(req, res, next)=> {
  
-    try {
-      const cajadb = await Caja.find()
-      res.status(200).json(cajadb)
-  
-    } catch (error) {
-      res.status(400).json(error)
-  
-    }  
+  try {
+    const cajadb= await Caja.find()
+  } catch (error) {
+    res.status(400).json(error)
+  }
    
    
   });
