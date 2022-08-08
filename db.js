@@ -3,9 +3,4 @@ const uri=`mongodb+srv://${process.env.DB}:${process.env.DB}@cluster0.dyxog.mong
 
   
   
-mongoose.connect(uri, {      
- useNewUrlParser: true,    
- useUnifiedTopology: true, 
-
-
-}).then(()=> console.log('db connected')).catch(e=>console.log(e))       
+mongoose.connect(uri).then(()=> console.log('db connected')).catch(e=>console.log(e))       

@@ -13,8 +13,11 @@ require('./db')
 app.use(cors())
 app.use(express.json())
 
-app.use('/', require('./route/caja'))
+// app.use('/v', require('./route/caja'))
+app.get('/', (req,res)=>{
 
+    res.send("hello")
+})
 
 
 app.listen(app.get('port'), () => {
