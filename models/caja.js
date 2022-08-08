@@ -23,5 +23,5 @@ const caja= new Schema({
 })  
 
 
-const Caja1= mongoose.model("Caja1",caja)
-module.exports=Caja1
+const Caja= mongoose.model("Caja",caja)
+module.exports=Caja
