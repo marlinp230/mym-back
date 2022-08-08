@@ -1,8 +1,8 @@
-const express = require('express');
-const router = express.Router();
+const {Router}= require('express');
+const router = Router();
 const Caja = require('../models/caja')
 
-router.get('/', (req, res, next)=> {
+router.get('/', async(req, res, next)=> {
  
     try {
       const cajadb = await Caja.find()
