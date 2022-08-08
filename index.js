@@ -3,10 +3,10 @@ var dotenv = require('dotenv');
 var cors= require('cors');
 var morgan= require('morgan');
 
-
-const app = express();
 dotenv.config()
-app.set('port', process.env.PORT || 3000) 
+const app = express();
+
+const PORT=process.env.PORT || 3000;
 
 
 
@@ -20,6 +20,6 @@ app.use('/v', require('./route/caja'))
 
 
 
-app.listen(app.get('port'), () => {
-    console.info(`Server listen on port ${app.get('port')}`);
+app.listen(PORT, () => {
+    console.info(`Server listen on port ${PORT}`);
 })
