@@ -3,11 +3,11 @@ const uri=`mongodb+srv://${process.env.DB}:${process.env.DB}@cluster0.dyxog.mong
 
   
   console.log(process.env.URI)
-mongoose.connect(`${process.env.URI}`)
+mongoose.connect(process.env.URI)
 .then(()=> console.log('db connected'))
 .catch(e=>console.log(e))       
 
 
 // git add .
 // git commit -am "make it better"
-//  git push heroku main
+//  git push heroku main   
