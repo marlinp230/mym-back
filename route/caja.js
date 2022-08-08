@@ -12,7 +12,7 @@ router.get('/', async function (req, res, next) {
       res.status(400).json(error)
   
     }
-    res.send("hello223456")
+   
   
   });
 
