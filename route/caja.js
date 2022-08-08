@@ -2,6 +2,9 @@ const {Router}= require('express');
 const router = Router();
 const Caja = require('../models/caja')
 
+
+
+//Home
 router.get('/', async(req, res, next)=> {
  
   try {
