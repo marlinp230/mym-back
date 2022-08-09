@@ -4,10 +4,14 @@ const Schema= mongoose.Schema;
 
 const ClientSchema= new Schema({
     Fecha:{type:String},
-    Nombre:{type:String,unique:true}
+    Nombre:{type:String},
+    orden: {
+        type: Number,
+        required: [true, "Necesito numero de orden"]
+    },
     
 
-    
+     
    
 }) 
 

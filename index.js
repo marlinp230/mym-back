@@ -14,9 +14,11 @@ require('./db')
 //middle ware
 app.use(morgan('dev'))  
 app.use(cors())
-app.use(express.json())
+app.use(express.json()) 
 
 app.use('/v', require('./route/caja'))
+app.use('/client', require('./route/client'))
+
 
 
 
