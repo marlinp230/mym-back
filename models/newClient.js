@@ -9,7 +9,13 @@ const ClientSchema= new Schema({
         type: Number,
         required: [true, "Necesito numero de orden"]
     },
+    Telefono:{
+        type:Number,
+        required: [true, "Necesito numero de telefono"],
+        unique:[true,"El numero de telefono ya existe"]
+    }
     
+     
 
      
    

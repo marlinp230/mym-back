@@ -11,6 +11,10 @@ const cajaSchema = new Schema({
         type: Number,
         default: 0
     },
+    Telefono: {
+        type: Number,
+        require:[true,"Necesito un numero de telefono"]
+    },
     orden: {
         type: Number,
         required: [true, "Necesito numero de orden"]

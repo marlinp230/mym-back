@@ -16,13 +16,13 @@ router.get('/', async(req, res, next)=> {
 
 //add to db
 router.post('/', async function (req, res, next) {
-  const { Fecha,Nombre } = req.body    
+  const { Fecha,Nombre,Telefono } = req.body;   
 
 
  console.log(req.body)
   try {
     const orden= await Client.find()
-    const client= await new Client({ Fecha, Nombre,orden:orden.length+1 });
+    const client= await new Client({ Fecha, Nombre,Telefono,orden:orden.length+1 });
 
     await client.save() 
 
