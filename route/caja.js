@@ -35,4 +35,21 @@ router.post('/', async function (req, res, next) {
 
 });
 
+//delete
+//add to db
+router.delete('/:id', async function (req, res, next) {
+  const {id}=req.params    
+  console.log(id)
+  try {
+    const deleted= await Caja.findById(id)        
+
+    res.status(200).json({deleted,status:true,message:"Eliminado!"})
+   
+  } catch (error) {
+    res.status(200).json({error,status:false,message:"Np pudo ser eliminado!"})
+
+  }
+
+});
+
 module.exports = router;
