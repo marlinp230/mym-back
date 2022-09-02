@@ -41,7 +41,7 @@ router.delete('/:id', async function (req, res, next) {
   const {id}=req.params    
   console.log(id)
   try {
-    const deleted= await Caja.findById(id)        
+    const deleted= await Caja.findByIdAndDelete(id)        
 
     res.status(200).json({deleted,status:true,message:"Eliminado!"})
    
