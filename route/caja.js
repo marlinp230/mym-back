@@ -39,7 +39,7 @@ router.post('/', async function (req, res, next) {
 //add to db
 router.delete('/:id', async function (req, res, next) {
   const {id}=req.params    
-  console.log(id)
+
   try {
     const deleted= await Caja.findByIdAndDelete(id)        
 

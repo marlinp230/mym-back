@@ -29,7 +29,8 @@ router.post('/', async function (req, res, next) {
     res.json({client,status:true,message:" Anadido en la Base de dato"})
 
   } catch (error) {            
-    res.json({status:false,message:"NO pudo ser Anadido en la Base de dato"})
+    res.json({status:false,error,message:"NO pudo ser Anadido en la Base de dato"});
+    console.log(error)
 
   }
 

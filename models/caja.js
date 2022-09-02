@@ -27,4 +27,4 @@ const cajaSchema = new Schema({
 
 
 const Caja = model("Caja", cajaSchema)     
-module.exports = Caja
+module.exports = Caja     
