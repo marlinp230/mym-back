@@ -53,19 +53,19 @@ router.delete('/:id', async function (req, res, next) {
 });
 //find by name
 
-// router.get('/profile/:only', async function (req, res, next) {
-//   const {only}=req.params    
-//   console.log(only)
-//   try {
-//     const Lista= await Caja.find({Nombre:only})        
+router.get('/profile/:only', async function (req, res, next) {
+  const {only}=req.params    
+  console.log(only)
+  try {
+    const Lista= await Caja.find({Nombre:only})        
 
-//     res.status(200).json(Lista)
+    res.status(200).json(Lista)
    
-//   } catch (error) {
-//     res.status(200).json({error,status:false,message:"Nop pudo ser encontrado!"})
+  } catch (error) {
+    res.status(200).json({error,status:false,message:"Nop pudo ser encontrado!"})
 
-//   }    
+  }    
 
-// });
+});
 
 module.exports = router;
