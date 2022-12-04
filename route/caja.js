@@ -62,7 +62,7 @@ router.get('/profile/:only', async function (req, res, next) {
     res.status(200).json(Lista)
    
   } catch (error) {
-    res.status(200).json({error,status:false,message:"Nop pudo ser encontrado!"})
+    res.status(200).json({error,status:false,message:"Nop pudo se encontrado!"})
 
   }    
 
