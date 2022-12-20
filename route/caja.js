@@ -67,5 +67,20 @@ router.get('/profile/:only', async function (req, res, next) {
   }    
 
 });
+//turn
+router.put('/turn/:id', async(req,res)=>{ 
+  const {id}=req.params;
+    try {
+      const caja= await Caja.findById(id);
+      caja.estado=!caja.estado
+      await caja.save()
+  
+      res.status(200).json(caja)
+     
+    } catch (error) {
+     res.status(200).json(error)
+      
+    }
+  })    
 
 module.exports = router;
