@@ -19,6 +19,10 @@ app.use(express.json())
 app.use('/v', require('./route/caja'))
 app.use('/client', require('./route/client'))
 
+app.get('/', (req,res)=>{
+    res.send('hello')
+})
+
 
 
 
