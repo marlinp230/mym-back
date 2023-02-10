@@ -8,6 +8,9 @@ const ClientSchema= new Schema({
     orden: {
         type: Number,
         required: [true, "Necesito numero de orden"]
+    },
+    total:{
+        type:Number
     }
     
      
