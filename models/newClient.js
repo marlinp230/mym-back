@@ -10,7 +10,8 @@ const ClientSchema= new Schema({
         required: [true, "Necesito numero de orden"]
     },
     total:{
-        type:Number
+        type:Number,
+        default:0
     }
     
      
