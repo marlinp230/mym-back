@@ -15,7 +15,7 @@ require('./db')
 app.use(morgan('dev'))  
 app.use(cors({
     origin:"https://frontmym.herokuapp.com/",
-    credentials:true
+    credentials:false 
 }))
 app.use(express.json()) 
 
