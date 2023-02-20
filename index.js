@@ -13,7 +13,10 @@ const PORT=process.env.PORT || 3000;
 require('./db')
 //middle ware
 app.use(morgan('dev'))  
-app.use(cors())
+app.use(cors({
+    origin:"https://frontmym.herokuapp.com/",
+    credentials:true
+}))
 app.use(express.json()) 
 
 app.use('/v', require('./route/caja'))
