@@ -1,6 +1,8 @@
 const {Router}= require('express');
 const router = Router();
 const Client= require('../models/newClient')
+const Caja= require('../models/caja')
+
 
 
 
@@ -10,7 +12,7 @@ router.get('/', async(req, res, next)=> {
     const client= await Client.find()
     res.status(200).json(client)
   } catch (error) {
-    res.status(400).json(error)
+    res.status(400).json({error:error.message,error})
   }
 });
 
@@ -34,6 +36,34 @@ router.post('/', async function (req, res, next) {
 
   }
 
+});
+
+
+// get totlas
+router.get('/gettotal', async(req, res, next)=> {
+  const array=[{
+    
+    Nombre: 'ERIDELBY',
+   
+    Monto: 3460,
+   
+    
+  }]
+  try {
+    const client= await Client.find()
+
+    
+    const cajadb= await Caja.find()
+
+    cajadb.map(caja=>{    
+      console.log(caja)
+    })
+
+
+    res.status(200).json({cajas:'caja-----------------------------------------------------------------------------------------------------------------------------------------------------------',array})
+  } catch (error) {
+    res.status(400).json(error)
+  }
 });
 
 module.exports = router;
