@@ -56,11 +56,11 @@ router.get('/getclient/:Nombre', async(req, res, next)=> {
     const client= await Client.find({Nombre})
 
     
-    const cajadb= await Caja.find()
+    const cajadb= await Caja.find({Nombre:client[0].Nombre})
 
    
 
-    res.status(200).json(client)
+    res.status(200).json({client,cajadb})
   } catch (error) {
     res.status(400).json(error)
   }
