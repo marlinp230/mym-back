@@ -40,7 +40,7 @@ router.post('/', async function (req, res, next) {
 
 
 // get totlas
-router.get('/gettotal', async(req, res, next)=> {
+router.get('/getclient/:Nombre', async(req, res, next)=> {
   const array=[{
     
     Nombre: 'ERIDELBY',
@@ -49,18 +49,18 @@ router.get('/gettotal', async(req, res, next)=> {
    
     
   }]
+  const {Nombre}= req.params;
+  console.log(Nombre)
+
   try {
-    const client= await Client.find()
+    const client= await Client.find({Nombre})
 
     
     const cajadb= await Caja.find()
 
-    cajadb.map(caja=>{    
-      console.log(caja)
-    })
+   
 
-
-    res.status(200).json({cajas:'caja-----------------------------------------------------------------------------------------------------------------------------------------------------------',array})
+    res.status(200).json(client)
   } catch (error) {
     res.status(400).json(error)
   }
