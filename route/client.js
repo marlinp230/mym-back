@@ -38,7 +38,7 @@ router.post('/', async function (req, res, next) {
 
 });
 
-
+    
 // get totlas
 router.get('/getclient/:Nombre', async(req, res, next)=> {
   const array=[{
@@ -48,12 +48,18 @@ router.get('/getclient/:Nombre', async(req, res, next)=> {
     Monto: 3460,
    
     
-  }]
+  }]  
   const {Nombre}= req.params;
   console.log(Nombre)
 
   try {
     const client= await Client.find({Nombre})
+    const JOSEHERMA= await Client.find({Nombre:"JOSEHERMA"}).reduce((p,c)=>p+c.Monto,0)
+    const CAJA= await Client.find({Nombre:"CAJA"}).reduce((p,c)=>p+c.Monto,0)
+    const EDUARDO= await Client.find({Nombre:"EDUARDO"}).reduce((p,c)=>p+c.Monto,0)
+    console.log(JOSEHERMA,CAJA,EDUARDO)
+
+
 
     
     const cajadb= await Caja.find({Nombre:client[0].Nombre})
