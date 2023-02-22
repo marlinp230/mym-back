@@ -38,6 +38,7 @@ router.post('/', async function (req, res, next) {
 
 });
 
+
     
 // get totlas
 router.get('/getclient/:Nombre', async(req, res, next)=> {
@@ -46,27 +47,22 @@ router.get('/getclient/:Nombre', async(req, res, next)=> {
     Nombre: 'ERIDELBY',
    
     Monto: 3460,
-   
+    
     
   }]  
   const {Nombre}= req.params;
-  console.log(Nombre)
+  
 
   try {
     const client= await Client.find({Nombre})
-    const JOSEHERMA= await Client.find({Nombre:"JOSEHERMA"}).reduce((p,c)=>p+c.Monto,0)
-    const CAJA= await Client.find({Nombre:"CAJA"}).reduce((p,c)=>p+c.Monto,0)
-    const EDUARDO= await Client.find({Nombre:"EDUARDO"}).reduce((p,c)=>p+c.Monto,0)
-    console.log(JOSEHERMA,CAJA,EDUARDO)
-
-
-
     
+    const JOSEHERMA= await Client.find({Nombre:"JOSEHERMA"})
+    const CAJA= await Caja.find({Nombre:"CAJA"})
+    console.log(CAJA)
+    // const EDUARDO= await Client.find({Nombre:"EDUARDO"}).reduce((p,c)=>p+c.Monto,0)
+    // console.log(JOSEHERMA.reduce((p,c)=>p+c.Monto,0)
     const cajadb= await Caja.find({Nombre:client[0].Nombre})
-
-   
-
-    res.status(200).json({client,cajadb})
+    res.status(200).json({client,cajadb,})   
   } catch (error) {
     res.status(400).json(error)
   }
