@@ -10,7 +10,7 @@ router.get('/', async(req, res, next)=> {
     const cajadb= await Caja.find()
     cajadb.sort((a,b)=>{
       if (a.orden > b.orden) {
-        return 1
+        return -1
       }
     })
     res.status(200).json(cajadb)
