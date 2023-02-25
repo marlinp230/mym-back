@@ -62,6 +62,11 @@ router.get('/getclient/:Nombre', async(req, res, next)=> {
     // const EDUARDO= await Client.find({Nombre:"EDUARDO"}).reduce((p,c)=>p+c.Monto,0)
     // console.log(JOSEHERMA.reduce((p,c)=>p+c.Monto,0)
     const cajadb= await Caja.find({Nombre:client[0].Nombre})
+    cajadb.sort((a,b)=>{
+      if (a.orden > b.orden) {
+        return -1
+      }
+    })
     res.status(200).json({client,cajadb,})   
   } catch (error) {
     res.status(400).json(error)
