@@ -14,7 +14,7 @@ require('./db')
 //middle ware
 app.use(morgan('dev'))  
 app.use(cors({
-    origin:["https://v1mym.herokuapp.com/","http://localhost:3000"],     
+    origin:["https://v1mym.herokuapp.com/","http://localhost:3000","https://charming-dove-pantsuit.cyclic.app/client"],         
     credentials:false 
 }))
 app.use(express.json()) 
