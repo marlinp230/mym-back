@@ -20,6 +20,10 @@ const cajaSchema = new Schema({
         type: Boolean,
         default: true
     },
+   id2:{
+    type: String,
+    default: true
+   }
 
 
 

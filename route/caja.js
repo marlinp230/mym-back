@@ -21,13 +21,13 @@ router.get('/', async(req, res, next)=> {
 
 //add to db
 router.post('/', async function (req, res, next) {
-  const { Fecha,Nombre,Telefono,Detalle,Monto } = req.body    
+  const { Fecha,Nombre,Telefono,Detalle,Monto ,id2} = req.body    
 
 
 
   try {
     const orden= await Caja.find()
-    const caja = await new Caja({ Fecha,Nombre, Telefono, Detalle, Monto,orden:orden.length+1 });
+    const caja = await new Caja({ Fecha,Nombre, Telefono, Detalle, Monto,orden:orden.length+1,id2 });
     console.log(orden.length)
     await caja.save() 
 
