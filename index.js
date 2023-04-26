@@ -6,9 +6,9 @@ var morgan= require('morgan');
 dotenv.config()
 const app = express();
 
-const PORT=process.env.PORT || 3000;
+const PORT=process.env.PORT || 3001;
 
-
+    
 
 require('./db')
 //middle ware
@@ -19,14 +19,14 @@ app.use(cors({
 }))
 app.use(express.json()) 
 
-app.use('/v', require('./route/caja'))
+
 app.use('/client', require('./route/client'))
 
 app.get('/', (req,res)=>{
     res.send('hello')
 })
 
-
+ 
 
 
 app.listen(PORT, () => {

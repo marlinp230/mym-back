@@ -5,14 +5,15 @@ const Schema= mongoose.Schema;
 const ClientSchema= new Schema({
     Fecha:{type:String},
     Nombre:{type:String},
-    orden: {
-        type: Number,
-        required: [true, "Necesito numero de orden"]
-    },
-    total:{
+   
+    Monto:{
         type:Number,
         default:0
-    }
+    },
+    Interes:{
+        type:Number,
+        default:0
+    },
     
      
 
